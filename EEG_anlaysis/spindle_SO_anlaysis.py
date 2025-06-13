@@ -53,25 +53,6 @@ for spindle_feature in range(len(all_features)):
     # this is cacna1g
     df = df_all[(df_all['subject_id'] != 106547) & (df_all['subject_id'] != 97561) & (df_all['subject_id'] != 96554) & (df_all['subject_id'] != 93533)]
 
-    # ## akap11
-    # df = df_all[(df_all['subject_id'] != 86189) & (df_all['subject_id'] != 86182) & (df_all['subject_id'] != 77528) & (df_all['subject_id'] != 86193)]
-
-
-    # df = df_all[(df_all['subject_id'] != 87957) & (df_all['subject_id'] != 93544) & (df_all['subject_id'] != 96533)]
-    # df = df_all[(df_all['subject_id'] != 77528) & (df_all['subject_id'] != 86193)] 
-    # df = df_all
-    
-    ### Male
-    # M = [87953,87954,87957,87959,87968,87969,87970,93535,93536,93537,96535,96536,96537,106568,106571,106572,106573,115550,115551,115552,115553,115554]   
-    # result = [m for m in M if m in df['subject_id'].values]
-    # df = df_all[df_all['subject_id'].isin(result)]
-
-    ### Female
-    # F = [87955,87956,87958,87960,87961,87971,87972,87973,93533,93534,93538,93539,93540,93544,93545,93546,96533,96534,106565,106566,106567,106569,106570,108850,108851,108853,115555]
-    # result = [f for f in F if f in df['subject_id'].values]
-    # df = df_all[df_all['subject_id'].isin(result)]  
-    df = df_all    
-
     # freq = [9,11,13,15];
     freq = [11];
 
@@ -84,14 +65,7 @@ for spindle_feature in range(len(all_features)):
         cycle = [phases[0],phases[0]] # if the len(phase) is less than 1, it means we are only looking at one cycle (ligth or dark)
     # cycle=['light','light']
     cycle=['LightCycle','LightCycle']
-    genos = sorted(df['geno'].unique())
-    if 1 in genos:
-        pass # here order is 1,2,3
-    elif 'C' in genos:
-        genos = sorted(genos) # here order is A, B, C for cacna1a
-    else:
-        genos = [genos[1],genos[0],genos[2]] # here order is KO, Het, and WT
-
+    genos = ['WT','Het','KO']
     
     clrs = ['black','green','orange'];
     # clrs = ['black','green','red'];

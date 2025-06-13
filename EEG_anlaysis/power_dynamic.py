@@ -101,33 +101,6 @@ for cy in range(0,24,1): #range(dur_len):
         l_d_all = np.concatenate([WT_mean_all[i],Het_mean_all[i],KO_mean_all[i]])
         rg_sp = max(l_d_all)-min(l_d_all);
     
-        # cc = cc+3
-        # plt.title(power_label[i])
-        # plt.xticks([0,1,2],labels=['WT','Het','KO'])
-        # plt.xlim([-.3,2.3])
-        # if i ==0:
-        #     plt.ylabel('Relative Power (dB)')
-        
-# =============================================================================
-#         # this part is for comparison. for paper figure, we do not need this part
-# =============================================================================
-        # f_statistic, p_value = f_oneway(WT_mean_all[i],Het_mean_all[i],KO_mean_all[i])
-        # if p_value<0.05:
-        #     t_stat1, p_value1 = stats.ttest_ind(WT_mean_all[i],KO_mean_all[i])
-        #     # rg_sp = max(l_d_all)-min(l_d_all);
-        #     if p_value1<0.05:
-        #         plt.plot([lcs[0],lcs[2]],[max(l_d_all)+(rg_sp*0.5),max(l_d_all)+(rg_sp*0.5)],color = clrs[2])
-        #         plt.plot([lcs[2],lcs[2]],[max(l_d_all)+(rg_sp*0.5),max(KO_mean_all[i])+.0],linestyle='--',linewidth = 1,alpha = .5, color = clrs[2])
-        #         plt.text(lcs[1]-.45, max(l_d_all)+(rg_sp*0.55), f"{p_value1:.2e}", fontsize=8, color=clrs[2])
-        
-        #     t_stat2, p_value2 = stats.ttest_ind(WT_mean_all[i],Het_mean_all[i])
-        #     # rg_sp = max(l_d_all)-min(l_d_all);
-        #     if p_value2<0.05:
-        #         plt.plot([lcs[0], lcs[1]],[max(l_d_all)+(rg_sp*0.2),max(l_d_all)+(rg_sp*0.2)],color = clrs[1])
-        #         plt.plot([lcs[1],lcs[1]],[max(l_d_all)+(rg_sp*0.2),max(Het_mean_all[i])+.0],linestyle='--', linewidth = 1,alpha = .5,color = clrs[1])
-        #         plt.text(np.mean(lcs[0:2])-.5, max(l_d_all)+(rg_sp*0.25), f"{p_value2:.2e}", fontsize=8, color=clrs[1])
-    
-        # plt.ylim([min(l_d_all)-(rg_sp*0.2), max(l_d_all)+(rg_sp*1)])
     wt_all.append(WT_mean_all)
     het_all.append(Het_mean_all)
     ko_all.append(KO_mean_all)
